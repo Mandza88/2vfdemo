@@ -1,0 +1,58 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+ 
+
+
+<ion-content padding class="loginback"> 
+
+  
+ 
+  
+ <div class="card-form">
+    <div class="form-title" >connexion</div>
+    <form [formGroup]="loginForm"  (submit)="loginUser()" novalidate>
+    <div class="form-body">
+     <div class="row">
+    
+    <ion-item class="item">
+    <ion-input type="email" formControlName="email" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty" placeholder="Email*"></ion-input>
+     </ion-item> 
+     <ion-item class="error-message" 
+      *ngIf="!loginForm.controls.email.valid  && loginForm.controls.email.dirty">
+      <p>veillez saisir votre email.</p>
+    </ion-item>                    
+ 
+    <ion-item>
+    <ion-input type="password" formControlName="password" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty" placeholder="Mot de passe*"></ion-input>
+     </ion-item> 
+      <ion-item class="error-message" 
+      *ngIf="!loginForm.controls.password.valid  && loginForm.controls.password.dirty">
+      <p>votre mot de passe doit contenir 6 characteres.</p>
+    </ion-item>
+   
+                 </div>
+                  
+                  </div>
+                  </form>
+     <div class="rule">
+
+    </div>
+
+    <div class="form-footer">
+             <button ion-button block color="primary" type="submit" [disabled]="!loginForm.valid" (click)="loginUser()">connexion</button><br>
+          
+            <button ion-button block  color="danger" (click)="goToSignup()">s'incrir</button>
+            <button ion-button block clear (click)="goToResetPassword()">
+                 mot de passe oublie?
+            </button>
+    </div>
+ </div>   
+
+</ion-content>

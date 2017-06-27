@@ -1,0 +1,22 @@
+<ion-menu type="reveal" [content]="content"  class="menulaterale" text-sm-wrap>
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>mbolo resto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content color="primary" class="no-scroll">
+ 
+    <ion-list no-lines danger >
+    
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+       <ion-icon name="{{p.icon}}" color="{{p.color}}"></ion-icon> {{p.title}}
+       <ion-badge item-end color="danger">{{p.badge}}</ion-badge>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

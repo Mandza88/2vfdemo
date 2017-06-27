@@ -1,0 +1,74 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+
+  <ion-navbar color="primary">
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="registerback"> 
+
+  
+ 
+  
+ <div class="card-form">
+    <div class="form-title" >inscription</div>
+    <div class="form-body">
+     <div class="row">
+    <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+      <ion-item>
+    <ion-input type="text" formControlName="nom" [class.invalid]="!signupForm.controls.nom.valid && signupForm.controls.nom.dirty" placeholder="Nom*"></ion-input>
+     </ion-item> 
+     <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.nom.valid  && signupForm.controls.nom.dirty">
+      <p>veillez saisir votre nom</p>
+    </ion-item>     
+    <ion-item>
+    <ion-input type="Text" formControlName="prenom" [class.invalid]="!signupForm.controls.prenom.valid && signupForm.controls.prenom.dirty" placeholder="Prenom*"></ion-input>
+     </ion-item> 
+     <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.prenom.valid  && signupForm.controls.prenom.dirty">
+      <p>veillez saisir votre Prenom</p>
+    </ion-item>     
+    <ion-item>
+    <ion-input type="email" formControlName="email" [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty" placeholder="Email*"></ion-input>
+     </ion-item> 
+     <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Please enter a valid email.</p>
+    </ion-item>                    
+ 
+    <ion-item>
+    <ion-input type="password" formControlName="password" [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty" placeholder="Mot de passe*"></ion-input>
+     </ion-item> 
+      <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+     </form>
+                 </div>
+                  </div>
+     <div class="rule">
+
+    </div>
+
+<div class="form-footer">
+     <button ion-button block color="primary" type="submit" [disabled]="!signupForm.valid" (click)="signupUser()">inscription</button>
+ 
+    </div>
+ </div>   
+
+</ion-content>
+
